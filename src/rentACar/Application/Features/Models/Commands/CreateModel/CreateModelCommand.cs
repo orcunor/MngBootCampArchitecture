@@ -36,8 +36,10 @@ namespace Application.Features.Models.Commands
 
             public async Task<Model> Handle(CreateModelCommand request, CancellationToken cancellationToken)
             {
-                Model mappedModel = _mapper.Map<Model>(request);
-                Model createdModel = await _modelRepository.AddAsync(mappedModel);
+                await _modelBusinessRules.ModelNameCanNotBeDuplicateWhenInserted(request.Name);
+
+                var mappedModel = _mapper.Map<Model>(request);
+                var createdModel = await _modelRepository.AddAsync(mappedModel);
                 return createdModel;
             }
         }
