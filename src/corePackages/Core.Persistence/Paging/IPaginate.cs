@@ -8,7 +8,7 @@ namespace Core.Persistence.Paging
 {
     public interface IPaginate<T>
     {
-        int From { get; }
+         int From { get; }
          int Index { get; }
          int Size { get; }
          int Count { get; }

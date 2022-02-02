@@ -18,7 +18,7 @@ namespace Application
             services.AddMediatR(Assembly.GetExecutingAssembly());
              
             services.AddScoped<BrandBusinessRules>(); // bellekte tutma sadece injection yap bırak demek
-
+            services.AddScoped<ModelBusinessRules>();
 
             return services;
         }
