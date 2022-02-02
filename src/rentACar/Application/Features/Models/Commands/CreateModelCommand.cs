@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Application.Features.Models.Rules;
+using Application.Services.Repositories;
+using AutoMapper;
+using Domain.Entities;
+using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Models.Commands
 {
-    public class CreateModelCommand
+    public class CreateModelCommand : IRequest<Model>
     {
         public string Name { get; set; }
         public decimal DailyPrice { get; set; }
@@ -36,4 +41,5 @@ namespace Application.Features.Models.Commands
                 return createdModel;
             }
         }
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using Application.Features.Brands.Rules;
+using Application.Features.Models.Rules;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System;
